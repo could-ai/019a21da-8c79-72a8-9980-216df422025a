@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum MachineStatus { working, underMaintenance, broken }
 
 class Machine {

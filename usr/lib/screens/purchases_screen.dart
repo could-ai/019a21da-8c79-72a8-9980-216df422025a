@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
 import '../models/financial_data.dart';
 
 class PurchasesScreen extends StatefulWidget {
@@ -73,26 +72,25 @@ class _PurchasesScreenState extends State<PurchasesScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  Row(
-                    children: [
-                      Text(
-                        data.description,
-                        style: Theme.of(context).textTheme.titleMedium,
+                Row(
+                  children: [
+                    Text(
+                      data.description,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const Spacer(),
+                    Text(
+                      '-₹${data.amount.toStringAsFixed(0)}',
+                      style: const TextStyle(
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const Spacer(),
-                      Text(
-                        '-₹${data.amount.toStringAsFixed(0)}',
-                        style: const TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text('Category: ${data.category}'),
-                  Text('Date: ${data.date.toString().split(' ')[0]}'),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                Text('Category: ${data.category}'),
+                Text('Date: ${data.date.toString().split(' ')[0]}'),
+              ],
             ),
           ),
         );
